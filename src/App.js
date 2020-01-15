@@ -83,11 +83,10 @@ class App extends Component {
           >
             Menu
           </h1>
-          {/* <div className="App-title">Welcome to Vitamin Juice store</div> */}
           <Navigation closeNav={this.closeNav} />
         </header>
         {
-          this.state.loadnig 
+          this.state.loading 
           ? 
           <Loading /> 
           :

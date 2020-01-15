@@ -3,7 +3,11 @@
     height: 60px;
     margin: 100px auto;
 }
-  
+
+h1 {
+    color: rgba(26, 25, 25, 0.899);
+}
+
 .sk-cube-grid .sk-cube {
     width: 33%;
     height: 33%;
