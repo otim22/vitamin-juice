@@ -4,8 +4,8 @@
     margin: 100px auto;
 }
 
-h1 {
-    color: rgba(26, 25, 25, 0.899);
+.cubes {
+    color: rgba(18, 16, 16, 0.899);
 }
 
 .sk-cube-grid .sk-cube {

@@ -17,7 +17,7 @@ html, body {
 }
 
 .static-logo {
-  height: 150px;
+  height: 100px;
   cursor: pointer;
   position: fixed;
   margin-left: auto;

@@ -14,7 +14,7 @@ const Loading = () => (
             <div className="sk-cube sk-cube8"></div>
             <div className="sk-cube sk-cube9"></div>
         </div>
-        <h1>Once these cubes disappear begin scrolling!</h1>
+        <h1 className="cubes">Once these cubes disappear begin scrolling!</h1>
     </div>
 )
 
