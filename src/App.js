@@ -1,26 +1,36 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './logo.png';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      toggleLogo: true,
+    }
+    this.toggleLogo = this.toggleLogo.bind(this);
+  }
+
+  toggleLogo(event) {
+    this.setState((preState) => ({
+      toggleLogo: !preState.toggleLogo
+    }));
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} 
+            className={this.state.toggleLogo ? 'static-logo' : 'animated-logo'} 
+            alt="logo" 
+            onClick={this.toggleLogo}
+          />
+          <h1 className="App-title">Welcome to react</h1>
+        </header>
+      </div>
+    );
+  }
 }
 
 export default App;
