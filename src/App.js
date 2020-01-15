@@ -21,7 +21,7 @@ class App extends Component {
     this.showBack = this.showBack.bind(this);
     this.showFront = this.showFront.bind(this);
   }
-  
+
   componentWillMount() {
     this.setState({
       cards: data
@@ -77,6 +77,13 @@ class App extends Component {
             onMouseLeave={this.toggleLogo}
             onClick={this.openNav}
           />
+          <h1 
+            className={this.state.toggleLogo ? 'menu-hidden' : 'menu animated bounceInDown'}
+            onClick={this.openNav}
+          >
+            Menu
+          </h1>
+          {/* <div className="App-title">Welcome to Vitamin Juice store</div> */}
           <Navigation closeNav={this.closeNav} />
         </header>
         {
