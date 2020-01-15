@@ -9,6 +9,13 @@ html, body {
   background-size: cover;
 }
 
+.Grid {
+  margin: 5%;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+}
+
 .static-logo {
   height: 100px;
 }
