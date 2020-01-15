@@ -18,6 +18,7 @@ html, body {
 
 .static-logo {
   height: 100px;
+  cursor: pointer;
 }
 
 .animated-logo {
