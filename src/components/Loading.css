@@ -4,8 +4,8 @@
     margin: 100px auto;
 }
 
-.cubes {
-    color: rgba(18, 16, 16, 0.899);
+.cube-heading {
+    color: rgb(31, 29, 29);
 }
 
 .sk-cube-grid .sk-cube {
