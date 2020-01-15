@@ -4,6 +4,7 @@ import './App.css';
 import Card from './components/Card';
 import Loading from './components/Loading';
 import Navigation from './components/Navigation';
+import data from './data/data.json';
 
 class App extends Component {
   constructor(props) {
@@ -11,39 +12,20 @@ class App extends Component {
     this.state = {
       toggleLogo: true,
       loading: true,
-      cards: [
-        {
-          id: 0,
-          animation: 'card'
-        }, 
-        {
-          id: 1,
-          animation: 'card'
-        }, 
-        {
-          id: 2,
-          animation: 'card'
-        }, 
-        {
-          id: 3,
-          animation: 'card'
-        }, 
-        {
-          id: 4,
-          animation: 'card'
-        }, 
-        
-        {
-          id: 5,
-          animation: 'card'
-        }
-      ]
+      cards: [],
     }
     
     this.toggleLogo = this.toggleLogo.bind(this);
-    this.clickCard = this.clickCard.bind(this);
     this.openNav = this.openNav.bind(this);
     this.closeNav = this.closeNav.bind(this);
+    this.showBack = this.showBack.bind(this);
+    this.showFront = this.showFront.bind(this);
+  }
+  
+  componentWillMount() {
+    this.setState({
+      cards: data
+    });
   }
 
   componentDidMount() {
@@ -56,9 +38,19 @@ class App extends Component {
     }));
   }
 
-  clickCard(card) {
+  showBack(card) {
     let cards = this.state.cards;
-    cards[card.id].animation = 'card animated zoomOut';
+    cards[card.id].animation = 'card card-flip';
+    console.log(cards);
+
+    this.setState({
+      cards,
+    })
+  }
+
+  showFront(card) {
+    let cards = this.state.cards;
+    cards[card.id].animation = 'card';
     console.log(cards);
 
     this.setState({
@@ -92,10 +84,14 @@ class App extends Component {
           ? 
           <Loading /> 
           :
-          <div className="Grid">
+          <div className="Grid animated bounceInUp">
           {
             this.state.cards.map((card) => (
-              <Card duration={150} key={card.id} card={card} clickCard={this.clickCard} />
+              <Card duration={150} 
+                  key={card.id} 
+                  card={card} 
+                  showBack={this.showBack}
+                  showFront={this.showFront} />
             ))
           }
         </div>
